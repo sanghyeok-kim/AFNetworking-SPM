@@ -37,14 +37,20 @@ let package = Package(
     products: [
         .library(
             name: "AFNetworking",
-            targets: ["AFNetworking", "UIKit_AFNetworking"]
+            targets: ["AFNetworking", "Security", "UIKit_AFNetworking"]
         )
     ],
     targets: [
         .target(
             name: "AFNetworking",
             path: "AFNetworking",
+            exclude: ["AFSecurityPolicy.h", "AFSecurityPolicy.m"],
             publicHeadersPath: ""
+        ),
+        .target(
+            name: "Security",
+            path: "AFNetworking",
+            sources: ["AFSecurityPolicy.h", "AFSecurityPolicy.m"]
         ),
         .target(
             name: "UIKit_AFNetworking",
