@@ -37,6 +37,7 @@ let package = Package(
     products: [
         .library(
             name: "AFNetworking",
+            type: .dynamic,
             targets: ["AFNetworking", "Security", "UIKit_AFNetworking"]
         )
     ],
