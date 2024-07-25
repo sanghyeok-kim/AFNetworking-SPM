@@ -44,7 +44,10 @@ let package = Package(
         .target(
             name: "AFNetworking",
             path: "AFNetworking",
-            publicHeadersPath: ""
+            publicHeadersPath: "",
+            cSettings: [
+                .headerSearchPath(".")
+            ]
         ),
         .target(
             name: "UIKit_AFNetworking",
