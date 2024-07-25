@@ -50,7 +50,10 @@ let package = Package(
             name: "UIKit_AFNetworking",
             dependencies: ["AFNetworking"],
             path: "UIKit+AFNetworking",
-            publicHeadersPath: ""
+            publicHeadersPath: "",
+            cSettings: [
+                .headerSearchPath("../AFNetworking")
+            ]
         )
     ]
 )
