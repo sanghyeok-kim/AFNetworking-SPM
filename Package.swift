@@ -37,17 +37,18 @@ let package = Package(
     products: [
         .library(
             name: "AFNetworking",
-            targets: ["AFNetworking", "UIKit_AFNetworking"]
+            targets: ["AFNetworking"]
+        ),
+        .library(
+            name: "UIKit_AFNetworking",
+            targets: ["UIKit_AFNetworking"]
         )
     ],
     targets: [
         .target(
             name: "AFNetworking",
             path: "AFNetworking",
-            publicHeadersPath: "",
-            cSettings: [
-                .headerSearchPath(".")
-            ]
+            publicHeadersPath: ""
         ),
         .target(
             name: "UIKit_AFNetworking",
