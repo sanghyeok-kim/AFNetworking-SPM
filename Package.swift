@@ -48,16 +48,16 @@ let package = Package(
         .target(
             name: "AFNetworking",
             path: "AFNetworking",
-            publicHeadersPath: "include"
+            publicHeadersPath: "include",
+            cSettings: [
+                .headerSearchPath(".")
+            ]
         ),
         .target(
             name: "UIKit_AFNetworking",
             dependencies: ["AFNetworking"],
             path: "UIKit+AFNetworking",
-            publicHeadersPath: "include",
-            cSettings: [
-                .headerSearchPath("../AFNetworking")
-            ]
+            publicHeadersPath: "include"
         )
     ]
 )
