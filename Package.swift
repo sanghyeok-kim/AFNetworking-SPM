@@ -47,17 +47,17 @@ let package = Package(
     targets: [
         .target(
             name: "AFNetworking",
-            path: "AFNetworking",
-            publicHeadersPath: "include",
-            cSettings: [
-                .headerSearchPath(".")
-            ]
+            path: "AFNetworking"
+//            publicHeadersPath: "include",
+//            cSettings: [
+//                .headerSearchPath(".") // `UIKit_AFNetworking` 타겟이 `AFNetworking` 타겟의 헤더에 접근할 수 있도록 하기 위함
+//            ]
         ),
         .target(
             name: "UIKit_AFNetworking",
             dependencies: ["AFNetworking"],
-            path: "UIKit+AFNetworking",
-            publicHeadersPath: "include"
+            path: "UIKit+AFNetworking"
+//            publicHeadersPath: "include"
         )
     ]
 )
